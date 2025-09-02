@@ -3,6 +3,7 @@
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsahaController;
 use App\Http\Controllers\UserController;
@@ -24,6 +25,10 @@ Route::middleware(['auth', 'checkRole:Superadmin,Admin'])->group(function () {
     
     Route::get('/kelolaBerita', [BeritaController::class, 'index'])->name('kelolaBerita');
 
+    Route::get('/kelolaGaleri', [GaleriController::class, 'index'])->name('kelolaGaleri');
+    Route::post('/kelolaGaleri', [GaleriController::class, 'store'])->name('tambahGaleri');
+    Route::put('/kelolaGaleri/{id}', [GaleriController::class, 'update'])->name('updateGaleri');
+    Route::delete('/kelolaGaleri/{id}', [GaleriController::class, 'destroy'])->name('hapusGaleri');
 
     Route::get('/kelolaUsaha', [UsahaController::class, 'index'])->name('kelolaUsaha');
     Route::post('/kelolaUsaha', [UsahaController::class, 'store'])->name('tambahUsaha');

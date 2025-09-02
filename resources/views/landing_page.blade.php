@@ -195,7 +195,7 @@
     <!-- Footer -->
     <div id="footer">
         <div class="w-full bottom-0 h-max">
-            <div class="w-screen bg-gradient-to-r from-gray-800 to-gray-900 text-white mt-16 py-8">
+            <div class="bg-gradient-to-r from-gray-800 to-gray-900 text-white mt-16 py-8">
                 <div class="container mx-auto text-center px-4">
                     <div class="flex flex-col items-center gap-4">
                         <h3 class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
