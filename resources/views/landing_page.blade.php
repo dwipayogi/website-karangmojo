@@ -7,7 +7,7 @@
 
 <div>
     <!-- Hero Section -->
-    <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 relative overflow-hidden">
+    <div class="min-h-screen flex items-center justify-center bg-blue-600 relative overflow-hidden">
         <div class="absolute inset-0 bg-black opacity-20"></div>
         <div class="absolute inset-0">
             <div class="absolute top-10 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
@@ -34,10 +34,10 @@
             <div class="flex lg:flex-row flex-col items-center gap-16">
                 <div class="flex flex-col gap-8 max-w-2xl lg:flex-1">
                     <div class="text-center lg:text-left">
-                        <h2 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4">
+                        <h2 class="text-5xl md:text-6xl font-bold text-blue-600 mb-4">
                             Profil Pedukuhan
                         </h2>
-                        <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto lg:mx-0 rounded-full"></div>
+                        <div class="w-24 h-1 bg-blue-600 mx-auto lg:mx-0 rounded-full"></div>
                     </div>
                     <p class="text-lg md:text-xl text-gray-700 leading-relaxed text-justify">
                         Karangmojo adalah sebuah pedukuhan yang terletak di wilayah yang kaya akan budaya dan tradisi.
@@ -65,10 +65,10 @@
     <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 px-8 py-20">
         <div class="container mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4">
+                <h2 class="text-5xl md:text-6xl font-bold text-blue-600 mb-8">
                     Lokasi Padukuhan Karangmojo
                 </h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full"></div>
+                <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
             </div>
             <div class="max-w-6xl mx-auto">
                 <div class="bg-white rounded-3xl p-8 shadow-2xl border border-blue-100">
@@ -93,10 +93,10 @@
     <div id="produk" class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-white to-gray-50 px-8 py-20">
         <div class="container mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4">
+                <h2 class="text-5xl md:text-6xl font-bold text-blue-600 mb-4">
                     Produk & Usaha
                 </h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full mb-4"></div>
+                <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full mb-4"></div>
                 <p class="text-lg text-gray-600 max-w-2xl mx-auto">Temukan berbagai produk unggulan dan usaha masyarakat Karangmojo</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
@@ -126,10 +126,10 @@
     <div id="berita" class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50 px-8 py-20">
         <div class="container mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4">
+                <h2 class="text-5xl md:text-6xl font-bold text-blue-600 mb-4">
                     Berita & Kegiatan
                 </h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full mb-4"></div>
+                <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full mb-4"></div>
                 <p class="text-lg text-gray-600 max-w-2xl mx-auto">Ikuti perkembangan terbaru dan kegiatan menarik di Karangmojo</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
@@ -159,7 +159,7 @@
                 @endforeach
             </div>
             <div class="text-center">
-                <a href="/berita" class="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <a href="/berita" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
                     Lihat Semua Berita
                 </a>
             </div>
@@ -170,15 +170,15 @@
     <div id="galeri" class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-white to-gray-50 px-8 py-20">
         <div class="container mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4">
+                <h2 class="text-5xl md:text-6xl font-bold text-blue-600 mb-4">
                     Galeri
                 </h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full mb-4"></div>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Momen-momen indah dan kegiatan menarik di Karangmojo</p>
+                <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full mb-4"></div>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Dokumentasi kegiatan di Karangmojo</p>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach ($galeri as $galeri)
-                <div class="group relative w-full h-64 bg-gray-200 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300">
+                <div class="group relative w-full h-80 bg-gray-200 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300">
                     <img src="{{ asset('uploads/galeri/' . $galeri->gambar_url) }}" alt="{{ $galeri->nama }}" 
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -195,16 +195,16 @@
     <!-- Footer -->
     <div id="footer">
         <div class="w-full bottom-0 h-max">
-            <div class="bg-gradient-to-r from-gray-800 to-gray-900 text-white mt-16 py-8">
+            <div class="bg-gray-800 text-white mt-16 py-8">
                 <div class="container mx-auto text-center px-4">
                     <div class="flex flex-col items-center gap-4">
-                        <h3 class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                        <h3 class="text-2xl font-bold text-blue-600">
                             Karangmojo
                         </h3>
                         <p class="text-gray-300 max-w-md">
                             Pedukuhan yang kaya akan budaya, tradisi, dan keindahan alam yang memukau
                         </p>
-                        <div class="w-16 h-0.5 bg-gradient-to-r from-blue-400 to-indigo-400"></div>
+                        <div class="w-16 h-0.5 bg-blue-600"></div>
                         <p class="text-gray-400">&copy; 2025 Karangmojo. All rights reserved.</p>
                     </div>
                 </div>

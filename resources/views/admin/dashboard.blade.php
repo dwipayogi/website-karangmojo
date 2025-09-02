@@ -27,8 +27,7 @@
                                 </svg>
                             </div>
                             <div class="text-right">
-                                <p class="text-2xl lg:text-3xl font-bold text-blue-600">150</p>
-                                <p class="text-xs lg:text-sm text-gray-500">+12% dari bulan lalu</p>
+                                <p class="text-4xl lg:text-5xl font-bold text-blue-600">{{ $totalUsers }}</p>
                             </div>
                         </div>
                         <h3 class="text-lg lg:text-xl font-semibold text-gray-800 mb-2">Total Pengguna</h3>
@@ -47,8 +46,7 @@
                                 </svg>
                             </div>
                             <div class="text-right">
-                                <p class="text-2xl lg:text-3xl font-bold text-green-600">75</p>
-                                <p class="text-xs lg:text-sm text-gray-500">+8% dari bulan lalu</p>
+                                <p class="text-4xl lg:text-5xl font-bold text-green-600">{{ $totalBerita }}</p>
                             </div>
                         </div>
                         <h3 class="text-lg lg:text-xl font-semibold text-gray-800 mb-2">Total Berita</h3>
@@ -67,8 +65,7 @@
                                 </svg>
                             </div>
                             <div class="text-right">
-                                <p class="text-2xl lg:text-3xl font-bold text-orange-600">300</p>
-                                <p class="text-xs lg:text-sm text-gray-500">+25% dari bulan lalu</p>
+                                <p class="text-4xl lg:text-5xl font-bold text-orange-600">{{ $totalUsaha }}</p>
                             </div>
                         </div>
                         <h3 class="text-lg lg:text-xl font-semibold text-gray-800 mb-2">Total Usaha</h3>
