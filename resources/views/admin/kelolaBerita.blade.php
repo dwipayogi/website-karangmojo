@@ -21,12 +21,12 @@
                 <div class="bg-gradient-to-r from-purple-600 to-pink-600 p-4 sm:p-6">
                     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                         <h2 class="text-xl sm:text-2xl font-bold text-white">Daftar Berita</h2>
-                        <button class="bg-white text-purple-600 px-4 sm:px-6 py-2 sm:py-3 rounded-lg sm:rounded-xl font-semibold hover:bg-purple-50 transition-all duration-200 transform hover:scale-105 shadow-lg text-sm sm:text-base">
+                        <a href="{{ route('tambahBerita') }}" class="bg-white text-purple-600 px-4 sm:px-6 py-2 sm:py-3 rounded-lg sm:rounded-xl font-semibold hover:bg-purple-50 transition-all duration-200 transform hover:scale-105 shadow-lg text-sm sm:text-base">
                             <svg class="w-4 h-4 sm:w-5 sm:h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                             </svg>
                             Tambah Berita
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -47,12 +47,12 @@
                                 <tr class="hover:bg-gray-50 transition-colors duration-200">
                                     <td class="py-4 px-6 font-medium text-gray-900">{{ $b->judul }}</td>
                                     <td class="py-4 px-6 text-gray-600">{{ \Carbon\Carbon::parse($b->tanggal)->format('d M Y') }}</td>
-                                    <td class="py-4 px-6 text-gray-600">{{ $b->penulis }}</td>
+                                    <td class="py-4 px-6 text-gray-600">{{ $b->id_user }}</td>
                                     <td class="py-4 px-6">
                                         <div class="flex space-x-2">
-                                            <button class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-200 transform hover:scale-105 text-sm font-medium">
-                                                Edit
-                                            </button>
+                                            <a href="{{ route('lihatBerita', $b->id)  }}" class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-200 transform hover:scale-105 text-sm font-medium">
+                                                Lihat
+                                            </a>
                                             <button class="bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-2 rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-200 transform hover:scale-105 text-sm font-medium">
                                                 Hapus
                                             </button>
