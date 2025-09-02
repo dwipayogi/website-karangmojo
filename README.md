@@ -1,61 +1,163 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Website Desa Karangmojo
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Website resmi Desa Karangmojo yang dibangun menggunakan framework Laravel untuk memberikan informasi dan layanan digital kepada masyarakat desa.
 
-## About Laravel
+## Tentang Proyek
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Website Desa Karangmojo adalah platform digital yang bertujuan untuk:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   Menyediakan informasi terkini tentang berita dan kegiatan desa
+-   Menampilkan galeri foto dokumentasi kegiatan desa
+-   Mempromosikan usaha-usaha lokal milik warga desa
+-   Memberikan akses informasi yang mudah dan transparan kepada masyarakat
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Fitur Utama
 
-## Learning Laravel
+### Untuk Pengunjung (Public)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+-   **Landing Page**: Halaman utama dengan informasi ringkas tentang desa
+-   **Berita Desa**: Menampilkan berita dan pengumuman terbaru dari desa
+-   **Detail Berita**: Halaman khusus untuk membaca berita secara lengkap
+-   **Galeri Foto**: Dokumentasi kegiatan dan foto-foto desa
+-   **Direktori Usaha**: Katalog usaha milik warga desa
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Untuk Administrator
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+-   **Dashboard Admin**: Panel kontrol untuk mengelola konten website
+-   **Kelola Berita**: Membuat, mengedit, dan menghapus berita desa
+-   **Kelola Usaha**: Mengelola data usaha-usaha lokal warga
+-   **Kelola Akun**: Manajemen akun pengguna (khusus Superadmin)
+-   **Login/Logout**: Sistem autentikasi yang aman
 
-## Laravel Sponsors
+## Teknologi yang Digunakan
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+-   **Backend**: Laravel 12.x (PHP 8.2+)
+-   **Frontend**: Blade Templates dengan Bootstrap
+-   **Database**: MySQL/MariaDB
+-   **Authentication**: Laravel Auth dengan Role-based Access Control
+-   **Testing**: Pest PHP untuk unit testing
+-   **Build Tools**: Vite untuk asset compilation
 
-### Premium Partners
+## Struktur Database
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Model Utama
 
-## Contributing
+-   **User**: Manajemen pengguna dengan role-based system
+-   **Berita**: Konten berita dan pengumuman desa
+-   **Usaha**: Database usaha-usaha lokal warga
+-   **Galeri**: Dokumentasi foto kegiatan desa
+-   **Pengguna**: Data demografis penduduk
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Instalasi dan Setup
 
-## Code of Conduct
+### Persyaratan Sistem
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+-   PHP 8.2 atau lebih tinggi
+-   Composer
+-   Node.js & NPM
+-   Database MySQL/MariaDB
 
-## Security Vulnerabilities
+### Langkah Instalasi
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. **Clone Repository**
 
-## License
+    ```bash
+    git clone https://github.com/dwipayogi/wesbite-karangmojo.git
+    cd wesbite-karangmojo
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+2. **Install Dependencies**
+
+    ```bash
+    composer install
+    npm install
+    ```
+
+3. **Environment Setup**
+
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
+
+4. **Database Configuration**
+
+    - Buat database baru di MySQL
+    - Sesuaikan konfigurasi database di file `.env`
+    - Jalankan migrasi:
+
+    ```bash
+    php artisan migrate
+    php artisan db:seed
+    ```
+
+5. **Build Assets**
+
+    ```bash
+    npm run build
+    ```
+
+6. **Storage Link**
+
+    ```bash
+    php artisan storage:link
+    ```
+
+7. **Jalankan Aplikasi**
+
+    ```bash
+    php artisan serve
+    ```
+
+    Website akan tersedia di `http://localhost:8000`
+
+## Penggunaan
+
+### Akses Administrator
+
+Untuk mengakses panel admin, kunjungi `/login` dan gunakan kredensial yang telah dibuat melalui seeder atau registrasi.
+
+### Role Pengguna
+
+-   **Superadmin**: Akses penuh ke semua fitur termasuk manajemen akun
+-   **Admin**: Akses ke manajemen konten (berita, usaha) tanpa manajemen akun
+
+## Development
+
+### Menjalankan dalam Mode Development
+
+```bash
+# Terminal 1 - Laravel Server
+php artisan serve
+
+# Terminal 2 - Asset Watcher
+npm run dev
+```
+
+### Testing
+
+```bash
+# Menjalankan semua test
+php artisan test
+
+# Atau menggunakan Pest
+./vendor/bin/pest
+```
+
+## Kontribusi
+
+Silakan berkontribusi untuk pengembangan website desa ini. Pastikan untuk:
+
+1. Fork repository ini
+2. Buat branch fitur baru (`git checkout -b fitur-baru`)
+3. Commit perubahan (`git commit -am 'Menambah fitur baru'`)
+4. Push ke branch (`git push origin fitur-baru`)
+5. Buat Pull Request
+
+## Tim Pengembang
+
+Website ini dikembangkan untuk mendukung digitalisasi pelayanan Desa Karangmojo dan meningkatkan transparansi informasi kepada masyarakat.
+
+## Lisensi
+
+Proyek ini menggunakan lisensi [MIT License](https://opensource.org/licenses/MIT) - silakan lihat file LICENSE untuk detail lebih lanjut.

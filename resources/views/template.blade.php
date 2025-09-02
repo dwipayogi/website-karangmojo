@@ -8,7 +8,7 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    <div class="mt-20 h-max">
+    <div>
         @yield('content')
     </div>
 </body>
