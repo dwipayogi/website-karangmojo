@@ -79,12 +79,9 @@
                                     <td class="py-4 px-6 text-gray-600">{{ $b->id_user }}</td>
                                     <td class="py-4 px-6">
                                         <div class="flex space-x-2">
-                                            <a href="{{ route('lihatBerita', $b->id)  }}" class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-200 transform hover:scale-105 text-sm font-medium">
+                                            <a href="{{ route('lihatBerita', $b->id)  }}" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 text-sm font-medium">
                                                 Lihat
                                             </a>
-                                            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 text-sm font-medium">
-                                                Edit
-                                            </button>
                                             <button onclick="confirmDelete({{ $b->id }}, '{{ $b->judul }}')" 
                                                     class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-all duration-200 transform hover:scale-105 text-sm font-medium">
                                                 Hapus
@@ -143,12 +140,12 @@
                         <p class="text-gray-500 mb-8 text-sm lg:text-base">
                             Anda belum menambahkan berita atau kegiatan apapun. Mulai dengan menambahkan berita pertama Anda.
                         </p>
-                        <button class="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 shadow-lg">
+                        <a href="{{ route('tambahBerita') }}" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 shadow-lg inline-block">
                             <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                             </svg>
                             Tambah Berita Pertama
-                        </button>
+                        </a>
                     </div>
                 </div>
                 @endif

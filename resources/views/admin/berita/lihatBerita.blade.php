@@ -12,14 +12,14 @@
                 @if($berita->gambar_url)
                     <img src="{{ asset('uploads/berita/' . $berita->gambar_url) }}" alt="Gambar Berita" class="w-full h-auto mb-6 rounded-lg">
                 @endif
-                <div class="prose max-w-none">
-                    {!! $konten_html !!}
+                <div class="prose max-w-none markdown-content">
+                    <div id="markdown-content">{{ $berita->konten_markdown }}</div>
                 </div>
 
                 <!-- Action Button -->
                 <div class="flex justify-center lg:justify-start">
                     <a href="{{ route('editBerita', $berita->id) }}"
-                            class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center gap-2">
+                            class="bg-blue-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center gap-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                         </svg>
@@ -31,4 +31,32 @@
             </div>
         </div>
     </div>
+</div>
+
+<!-- Markdown rendering -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.2.0/github-markdown-light.min.css">
+<style>
+    .markdown-content {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+    }
+    .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 45px;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const markdownContent = document.getElementById('markdown-content');
+        if (markdownContent) {
+            const markdownText = markdownContent.textContent;
+            markdownContent.innerHTML = marked.parse(markdownText);
+            markdownContent.classList.add('markdown-body');
+        }
+    });
+</script>
 @endsection

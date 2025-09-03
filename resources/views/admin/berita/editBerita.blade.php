@@ -47,7 +47,7 @@
                         <textarea id="markdown-editor" name="konten_markdown">{{ $berita->konten_markdown }}</textarea>
                     </div>
                     <div class="flex items-center justify-end">
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl focus:outline-none focus:shadow-outline transition-all duration-200 transform hover:scale-105 shadow-lg" 
                             type="submit">
                             Update
                         </button>
@@ -60,14 +60,34 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
 <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
     const easyMDE = new EasyMDE({
         element: document.getElementById('markdown-editor'),
         spellChecker: false,
-        autosave: { enabled: true, uniqueId: "artikel_md", delay: 1000 },
-        placeholder: "Tulis di sini...",
+        autosave: { 
+            enabled: true, 
+            uniqueId: "artikel_md_edit", 
+            delay: 1000 
+        },
+        placeholder: "Tulis konten berita di sini...",
         autofocus: true,
-        uploadImage: false
+        uploadImage: false,
+        previewRender: function(plainText) {
+            return marked.parse(plainText);
+        },
+        toolbar: [
+            "bold", "italic", "heading", "|",
+            "quote", "unordered-list", "ordered-list", "|",
+            "link", "image", "|",
+            "preview", "side-by-side", "fullscreen", "|",
+            "guide"
+        ],
+        status: ["autosave", "lines", "words", "cursor"],
+        renderingConfig: {
+            singleLineBreaks: false,
+            codeSyntaxHighlighting: true,
+        }
     });
 
     // Saat form disubmit → sinkronkan editor ke textarea
