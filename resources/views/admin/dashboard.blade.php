@@ -16,7 +16,7 @@
             </div>
 
             <!-- Stats Cards -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 lg:mb-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-8 lg:mb-12">
                 <!-- Users Card -->
                 <div class="group bg-white/80 backdrop-blur-sm rounded-xl lg:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden">
                     <div class="p-6 lg:p-8">
@@ -27,8 +27,7 @@
                                 </svg>
                             </div>
                             <div class="text-right">
-                                <p class="text-2xl lg:text-3xl font-bold text-blue-600">150</p>
-                                <p class="text-xs lg:text-sm text-gray-500">+12% dari bulan lalu</p>
+                                <p class="text-4xl lg:text-5xl font-bold text-blue-600">{{ $totalUsers }}</p>
                             </div>
                         </div>
                         <h3 class="text-lg lg:text-xl font-semibold text-gray-800 mb-2">Total Pengguna</h3>
@@ -47,8 +46,7 @@
                                 </svg>
                             </div>
                             <div class="text-right">
-                                <p class="text-2xl lg:text-3xl font-bold text-green-600">75</p>
-                                <p class="text-xs lg:text-sm text-gray-500">+8% dari bulan lalu</p>
+                                <p class="text-4xl lg:text-5xl font-bold text-green-600">{{ $totalBerita }}</p>
                             </div>
                         </div>
                         <h3 class="text-lg lg:text-xl font-semibold text-gray-800 mb-2">Total Berita</h3>
@@ -58,7 +56,7 @@
                 </div>
 
                 <!-- Business Card -->
-                <div class="group bg-white/80 backdrop-blur-sm rounded-xl lg:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden sm:col-span-2 lg:col-span-1">
+                <div class="group bg-white/80 backdrop-blur-sm rounded-xl lg:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden">
                     <div class="p-6 lg:p-8">
                         <div class="flex items-center justify-between mb-4 lg:mb-6">
                             <div class="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl lg:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -67,14 +65,32 @@
                                 </svg>
                             </div>
                             <div class="text-right">
-                                <p class="text-2xl lg:text-3xl font-bold text-orange-600">300</p>
-                                <p class="text-xs lg:text-sm text-gray-500">+25% dari bulan lalu</p>
+                                <p class="text-4xl lg:text-5xl font-bold text-orange-600">{{ $totalUsaha }}</p>
                             </div>
                         </div>
                         <h3 class="text-lg lg:text-xl font-semibold text-gray-800 mb-2">Total Usaha</h3>
                         <p class="text-sm lg:text-base text-gray-600">Usaha yang terdaftar di sistem</p>
                     </div>
                     <div class="h-1 bg-gradient-to-r from-orange-500 to-orange-600"></div>
+                </div>
+
+                <!-- Gallery Card -->
+                <div class="group bg-white/80 backdrop-blur-sm rounded-xl lg:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden">
+                    <div class="p-6 lg:p-8">
+                        <div class="flex items-center justify-between mb-4 lg:mb-6">
+                            <div class="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl lg:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <svg class="w-6 h-6 lg:w-8 lg:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-4xl lg:text-5xl font-bold text-purple-600">{{ $totalGaleri }}</p>
+                            </div>
+                        </div>
+                        <h3 class="text-lg lg:text-xl font-semibold text-gray-800 mb-2">Total Galeri</h3>
+                        <p class="text-sm lg:text-base text-gray-600">Gambar yang tersimpan di galeri</p>
+                    </div>
+                    <div class="h-1 bg-gradient-to-r from-purple-500 to-purple-600"></div>
                 </div>
             </div>
 
@@ -96,6 +112,13 @@
                         <span class="font-medium text-sm lg:text-base">Kelola Usaha</span>
                     </a>
                     
+                    <a href="{{ route('kelolaGaleri') }}" class="group flex items-center gap-3 p-3 lg:p-4 rounded-lg lg:rounded-xl bg-gradient-to-r from-pink-500 to-pink-600 text-white hover:from-pink-600 hover:to-pink-700 transition-all duration-200 transform hover:scale-105">
+                        <svg class="w-5 h-5 lg:w-6 lg:h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        <span class="font-medium text-sm lg:text-base">Kelola Galeri</span>
+                    </a>
+                    
                     @if(auth()->user()->role === 'Superadmin')
                     <a href="{{ route('kelolaAkun') }}" class="group flex items-center gap-3 p-3 lg:p-4 rounded-lg lg:rounded-xl bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 transition-all duration-200 transform hover:scale-105">
                         <svg class="w-5 h-5 lg:w-6 lg:h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,13 +127,6 @@
                         <span class="font-medium text-sm lg:text-base">Kelola Akun</span>
                     </a>
                     @endif
-                    
-                    <a href="/" class="group flex items-center gap-3 p-3 lg:p-4 rounded-lg lg:rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 transition-all duration-200 transform hover:scale-105">
-                        <svg class="w-5 h-5 lg:w-6 lg:h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-                        </svg>
-                        <span class="font-medium text-sm lg:text-base">Lihat Website</span>
-                    </a>
                 </div>
             </div>
         </div>

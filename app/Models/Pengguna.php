@@ -14,6 +14,8 @@ class Pengguna extends Authenticatable
 
     protected $table = 'pengguna';
     public $timestamps = false;
+    public $incrementing = false; // Disable auto-increment
+    protected $keyType = 'int'; // Primary key type
 
     /**
      * The attributes that are mass assignable.
@@ -21,9 +23,11 @@ class Pengguna extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
+        'id',
         'username',
         'password',
         'role',
+        'status',
     ];
 
     /**

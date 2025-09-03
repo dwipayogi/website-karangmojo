@@ -5,15 +5,15 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UsahaController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\viewBeritaController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/daftar', function () {
-    return view('daftar');
-});
+Route::get('/daftar', [RegisterController::class, 'index'])->name('daftar');
+Route::post('/daftar', [RegisterController::class, 'register'])->name('daftar.submit');
 
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
@@ -29,6 +29,7 @@ Route::middleware(['auth', 'checkRole:Superadmin,Admin'])->group(function () {
     Route::get('/kelolaBerita/{id}', [BeritaController::class, 'show'])->name('lihatBerita');
     Route::get('/kelolaBerita/editBerita/{id}', [BeritaController::class, 'edit'])->name('editBerita');
     Route::put('/kelolaBerita/editBerita/{id}', [BeritaController::class, 'update'])->name('updateBerita');
+    Route::delete('/kelolaBerita/{id}', [BeritaController::class, 'destroy'])->name('hapusBerita');
 
     Route::get('/kelolaGaleri', [GaleriController::class, 'index'])->name('kelolaGaleri');
     Route::post('/kelolaGaleri', [GaleriController::class, 'store'])->name('tambahGaleri');

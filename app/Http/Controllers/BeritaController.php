@@ -150,6 +150,19 @@ class BeritaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try {
+            $berita = Berita::findOrFail($id);
+            
+            // Delete the image file if it exists
+            if ($berita->gambar_url && file_exists(public_path('uploads/berita/' . $berita->gambar_url))) {
+                unlink(public_path('uploads/berita/' . $berita->gambar_url));
+            }
+            
+            $berita->delete();
+            
+            return redirect()->route('kelolaBerita')->with('success', 'Berita berhasil dihapus');
+        } catch (\Exception $e) {
+            return redirect()->route('kelolaBerita')->with('error', 'Gagal menghapus berita');
+        }
     }
 }

@@ -4,13 +4,6 @@
 
 @section('content')
     <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 relative overflow-hidden">
-        <!-- Background decorative elements -->
-        <div class="absolute inset-0">
-            <div class="absolute top-10 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-            <div class="absolute top-40 right-20 w-56 h-56 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
-            <div class="absolute bottom-20 left-1/3 w-64 h-64 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
-        </div>
-
         <div class="relative z-10 w-full max-w-md mx-4">
             <!-- Login Card -->
             <div class="bg-white/95 backdrop-blur-md p-8 rounded-3xl shadow-2xl border border-white/20">
@@ -26,6 +19,17 @@
                     </h2>
                     <p class="text-gray-600">Masuk ke akun Anda untuk melanjutkan</p>
                 </div>
+
+                @if (session('success'))
+                    <div class="mb-6 p-4 bg-green-50 border border-green-200 text-green-700 rounded-xl">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="font-medium">{{ session('success') }}</span>
+                        </div>
+                    </div>
+                @endif
 
                 @if ($errors->any())
                     <div class="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-xl">

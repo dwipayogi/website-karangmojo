@@ -153,12 +153,9 @@ class UsahaController extends Controller
     public function destroy(string $id)
     {
         $usaha = Usaha::findOrFail($id);
-
         if ($usaha->gambar_url && file_exists(public_path('uploads/usaha/' . $usaha->gambar_url))) {
             unlink(public_path('uploads/usaha/' . $usaha->gambar_url));
         }
-
-        $usaha = Usaha::findOrFail($id);
         $usaha->delete();
 
         return redirect()->route('kelolaUsaha')->with('success', 'Usaha berhasil dihapus.');

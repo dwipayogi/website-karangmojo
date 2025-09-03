@@ -3,22 +3,22 @@
 @section('title', 'Kelola Galeri')
 
 @section('content')
-<div class="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+<div class="min-h-screen bg-blue-50">
     <div class="p-4 sm:p-6 lg:p-8">
         <div class="max-w-7xl mx-auto">
             <!-- Header -->
             <div class="mb-6 lg:mb-8">
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600 mb-4">
                     Kelola Galeri
                 </h1>
-                <div class="w-16 sm:w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full"></div>
+                <div class="w-16 sm:w-24 h-1 bg-blue-600 rounded-full"></div>
                 <p class="text-gray-600 mt-4 text-base lg:text-lg">Kelola koleksi gambar dan foto untuk website</p>
             </div>
 
             <!-- Success/Error Messages -->
             @if(session('success'))
                 <div x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 5000)" 
-                     class="mb-6 p-4 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-2xl shadow-lg flex items-center justify-between">
+                     class="mb-6 p-4 bg-green-500 text-white rounded-2xl shadow-lg flex items-center justify-between">
                     <div class="flex items-center space-x-3">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -32,7 +32,7 @@
             <!-- Action Button -->
             <div class="flex justify-end mb-6">
                 <button onclick="openAddModal()" 
-                        class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center gap-2">
+                        class="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center gap-2">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                     </svg>
@@ -83,7 +83,7 @@
                 <!-- Empty State -->
                 <div class="bg-white/80 backdrop-blur-sm rounded-xl lg:rounded-2xl shadow-lg p-8 lg:p-16 text-center">
                     <div class="max-w-md mx-auto">
-                        <div class="w-24 h-24 lg:w-32 lg:h-32 mx-auto bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mb-6">
+                        <div class="w-24 h-24 lg:w-32 lg:h-32 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-6">
                             <svg class="w-12 h-12 lg:w-16 lg:h-16 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                             </svg>
@@ -91,7 +91,7 @@
                         <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-3">Belum ada gambar</h3>
                         <p class="text-gray-600 mb-8 text-sm lg:text-base">Mulai tambahkan gambar pertama Anda ke galeri untuk menampilkan koleksi foto</p>
                         <button onclick="openAddModal()" 
-                                class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 transform hover:scale-105 shadow-lg">
+                                class="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 shadow-lg">
                             Tambah Gambar Pertama
                         </button>
                     </div>
