@@ -31,7 +31,7 @@
                             </div>
                         </div>
                         <h3 class="text-lg lg:text-xl font-semibold text-gray-800 mb-2">Total Pengguna</h3>
-                        <p class="text-sm lg:text-base text-gray-600">Pengguna yang terdaftar dalam sistem</p>
+                        <p class="text-sm lg:text-base text-gray-600">Pengguna yang terdaftar</p>
                     </div>
                     <div class="h-1 bg-gradient-to-r from-blue-500 to-blue-600"></div>
                 </div>
@@ -50,7 +50,7 @@
                             </div>
                         </div>
                         <h3 class="text-lg lg:text-xl font-semibold text-gray-800 mb-2">Total Berita</h3>
-                        <p class="text-sm lg:text-base text-gray-600">Artikel berita yang telah dipublikasi</p>
+                        <p class="text-sm lg:text-base text-gray-600">Artikel yang telah dipublikasi</p>
                     </div>
                     <div class="h-1 bg-gradient-to-r from-green-500 to-green-600"></div>
                 </div>

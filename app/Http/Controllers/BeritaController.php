@@ -6,7 +6,6 @@ use App\Models\Berita;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
-use League\CommonMark\CommonMarkConverter;
 
 
 class BeritaController extends Controller
@@ -42,7 +41,7 @@ class BeritaController extends Controller
         // dd($request->all());
         $request->validate([
             'judul' => 'required|string|max:255',
-            'konten_markdown' => 'required|string',
+            'konten' => 'required|string',
             'gambar_url' => 'required|image|mimes:jpg,jpeg,png|max:2048',
             'status' => 'required|in:Draf,Arsip,Posting',
         ]);
@@ -66,7 +65,7 @@ class BeritaController extends Controller
         Berita::create([
             'slug' => $slug,
             'judul' => $request->judul,
-            'konten_markdown' => $request->konten_markdown,
+            'konten_markdown' => $request->konten,
             'gambar_url' => $gambarPath,
             'status' => $request->status,
             'user_id' => Auth::id(),
@@ -85,12 +84,8 @@ class BeritaController extends Controller
     {
         //
         $berita = Berita::findOrFail($id);
-        $converter = new CommonMarkConverter([
-            'html_input' => 'strip',
-            'allow_unsafe_links' => false,
-        ]);
-        $konten_html = $converter->convert($berita->konten_markdown)->getContent();
-        return view('admin.berita.lihatBerita', compact(['berita', 'konten_html']));
+        // Since we're now storing HTML directly, no need to convert from markdown
+        return view('admin.berita.lihatBerita', compact('berita'));
     }
 
     /**
@@ -112,7 +107,7 @@ class BeritaController extends Controller
         $berita = Berita::findOrFail($id);
         $request->validate([
             'judul' => 'required|string|max:255',
-            'konten_markdown' => 'required|string',
+            'konten' => 'required|string',
             'gambar_url' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
             'status' => 'required|in:Draf,Arsip,Posting',
         ]);
@@ -134,7 +129,7 @@ class BeritaController extends Controller
         }
 
         $berita->judul = $request->judul;
-        $berita->konten_markdown = $request->konten_markdown;
+        $berita->konten_markdown = $request->konten;
         $berita->status = $request->status;
         $berita->tanggal_diubah = now();
         if ($request->status === 'Posting' && !$berita->tanggal_dipublish) {

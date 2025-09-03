@@ -12,8 +12,8 @@
                 @if($berita->gambar_url)
                     <img src="{{ asset('uploads/berita/' . $berita->gambar_url) }}" alt="Gambar Berita" class="w-full h-auto mb-6 rounded-lg">
                 @endif
-                <div class="prose max-w-none markdown-content">
-                    <div id="markdown-content">{{ $berita->konten_markdown }}</div>
+                <div class="prose max-w-none">
+                    {!! $berita->konten_markdown !!}
                 </div>
 
                 <!-- Action Button -->
@@ -32,31 +32,4 @@
         </div>
     </div>
 </div>
-
-<!-- Markdown rendering -->
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.2.0/github-markdown-light.min.css">
-<style>
-    .markdown-content {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-        line-height: 1.6;
-    }
-    .markdown-body {
-        box-sizing: border-box;
-        min-width: 200px;
-        max-width: 980px;
-        margin: 0 auto;
-        padding: 45px;
-    }
-</style>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const markdownContent = document.getElementById('markdown-content');
-        if (markdownContent) {
-            const markdownText = markdownContent.textContent;
-            markdownContent.innerHTML = marked.parse(markdownText);
-            markdownContent.classList.add('markdown-body');
-        }
-    });
-</script>
 @endsection
