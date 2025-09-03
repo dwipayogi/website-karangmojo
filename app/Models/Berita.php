@@ -21,4 +21,16 @@ class Berita extends Model
         'tanggal_dipublish',
         'tanggal_diubah',
     ];
+
+    // Accessor for konten attribute - maps to konten_markdown
+    public function getKontenAttribute()
+    {
+        return $this->konten_markdown;
+    }
+
+    // Mutator for konten attribute - saves to konten_markdown
+    public function setKontenAttribute($value)
+    {
+        $this->attributes['konten_markdown'] = $value;
+    }
 }

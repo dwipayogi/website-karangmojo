@@ -7,7 +7,6 @@ namespace App\Http\Controllers;
 use App\Models\Berita;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use League\CommonMark\CommonMarkConverter;
 
 class viewBeritaController extends Controller
 {
@@ -21,11 +20,8 @@ class viewBeritaController extends Controller
     {
         $berita = Berita::findOrFail($id);
 
-        $converter = new CommonMarkConverter([
-            'html_input' => 'strip',
-            'allow_unsafe_links' => false,
-        ]);
-        $konten_html = $converter->convert($berita->konten_markdown)->getContent();
+        // Since we're now storing HTML directly, no need to convert from markdown
+        $konten_html = $berita->konten_markdown;
 
         return view('detailBerita', compact('berita', 'konten_html'));
     }
