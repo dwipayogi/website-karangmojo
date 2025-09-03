@@ -31,6 +31,7 @@ class UsahaController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate([
             'nama'      => 'required|string|max:255',
             'deskripsi' => 'required|string',
@@ -42,17 +43,16 @@ class UsahaController extends Controller
 
         // Buat slug unik
         $slug = Str::slug($request->nama, '-');
-        $cekSlug = Usaha::where('slug', $slug)->exists();
-        if ($cekSlug) {
-            $slug .= '-' . time();
+        if (Usaha::where('slug', $slug)->exists()) {
+            $slug .= '-' . now()->timestamp;
         }
 
         // Upload gambar kalau ada
         $gambarPath = null;
         if ($request->hasFile('gambar_url')) {
             $gambar = $request->file('gambar_url');
-            $namaFile = time() . '_' . $gambar->getClientOriginalName();
-            $gambar->move('uploads/usaha/', $namaFile);
+            $namaFile = time() . '_' . $gambar->getClientOriginalExtension();
+            $gambar->move(public_path('uploads/usaha'), $namaFile);
             $gambarPath = $namaFile;
         }
 
@@ -105,34 +105,38 @@ class UsahaController extends Controller
         // Validasi input
         $request->validate([
             'nama' => 'required|string|max:255',
-            'slug' => 'required|string|max:255|unique:usaha,slug,' . $usaha->id, // unique tapi abaikan slug dirinya sendiri
             'deskripsi' => 'required|string',
             'penjelasan' => 'nullable|string',
             'kontak' => 'required|string|max:255',
             'nomor_hp' => 'required|string|max:20',
-            'gambar_url' => 'nullable|image|mimes:jpeg,png,jpg|max:2048'
+            'gambar_url' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'status' => 'required|in:Draf,Arsip,Posting',
         ]);
 
         // Update field biasa
         $usaha->nama = $request->nama;
-        $usaha->slug = $request->slug;
         $usaha->deskripsi = $request->deskripsi;
         $usaha->penjelasan = $request->penjelasan;
         $usaha->kontak = $request->kontak;
         $usaha->nomor_hp = $request->nomor_hp;
         $usaha->tanggal_diubah = now();
 
+        if($request->status === 'Posting' && !$usaha->tanggal_dipublish) {
+            $usaha->tanggal_dipublish = now();
+        }
+        $usaha->status = $request->status;
+
         // Jika ada gambar baru diupload
         if ($request->hasFile('gambar_url')) {
             // Hapus file lama jika ada
             if ($usaha->gambar_url && file_exists(public_path('uploads/usaha/' . $usaha->gambar_url))) {
-                unlink(public_path('uploads/usaha/' . $usaha->gambar_url));
+                unlink(public_path('uploads/usaha' . $usaha->gambar_url));
             }
 
             // Simpan file baru
             $file = $request->file('gambar_url');
-            $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move('uploads/usaha/', $filename);
+            $filename = time() . '_' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/usaha'), $filename);
 
             $usaha->gambar_url = $filename;
         }
@@ -149,12 +153,9 @@ class UsahaController extends Controller
     public function destroy(string $id)
     {
         $usaha = Usaha::findOrFail($id);
-
-        // Hapus file gambar jika ada
         if ($usaha->gambar_url && file_exists(public_path('uploads/usaha/' . $usaha->gambar_url))) {
             unlink(public_path('uploads/usaha/' . $usaha->gambar_url));
         }
-
         $usaha->delete();
 
         return redirect()->route('kelolaUsaha')->with('success', 'Usaha berhasil dihapus.');

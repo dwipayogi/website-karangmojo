@@ -7,16 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Berita extends Model
 {
     protected $table = 'berita';
+    public $timestamps = false;
 
-    protected $casts = [
-        'tanggal_dibuat' => 'datetime',
-        'tanggal_dipublish' => 'datetime',
-        'tanggal_diubah' => 'datetime',
-    ];
 
     protected $fillable = [
         'slug',
+        'user_id',
         'judul',
+        'konten_markdown',
         'gambar_url',
         'status',
         'tanggal_dibuat',

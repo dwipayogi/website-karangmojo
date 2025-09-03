@@ -9,7 +9,7 @@
             <div class="mb-6 lg:mb-8">
                 <div class="flex items-center gap-4 mb-4">
                     <a href="{{ route('kelolaUsaha') }}" 
-                       class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200">
+                    class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                         </svg>
@@ -25,7 +25,7 @@
             <!-- Success/Error Messages -->
             @if(session('success'))
                 <div x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 5000)" 
-                     class="mb-6 p-4 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-2xl shadow-lg flex items-center justify-between">
+                    class="mb-6 p-4 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-2xl shadow-lg flex items-center justify-between">
                     <div class="flex items-center space-x-3">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -38,7 +38,7 @@
 
             @if(session('error'))
                 <div x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 5000)" 
-                     class="mb-6 p-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-2xl shadow-lg flex items-center justify-between">
+                    class="mb-6 p-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-2xl shadow-lg flex items-center justify-between">
                     <div class="flex items-center space-x-3">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -128,8 +128,8 @@
                     <div class="bg-white/80 backdrop-blur-sm rounded-xl lg:rounded-2xl shadow-lg overflow-hidden h-64 sm:h-80 lg:h-full min-h-[400px]">
                         @if($usaha->gambar_url)
                             <img src="{{ asset('uploads/usaha/' . $usaha->gambar_url) }}" 
-                                 alt="{{ $usaha->nama }}"
-                                 class="w-full h-full object-cover">
+                                alt="{{ $usaha->nama }}"
+                                class="w-full h-full object-cover">
                         @else
                             <div class="w-full h-full flex items-center justify-center bg-gray-100">
                                 <div class="text-center text-gray-500">
@@ -172,42 +172,44 @@
                             <div class="md:col-span-2">
                                 <label class="block text-sm font-semibold text-gray-700 mb-2">Nama Usaha</label>
                                 <input type="text" name="nama" 
-                                       class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" 
-                                       value="{{ $usaha->nama }}" required>
-                            </div>
-
-                            <div class="md:col-span-2">
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Slug</label>
-                                <input type="text" name="slug" 
-                                       class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" 
-                                       value="{{ $usaha->slug }}">
+                                    class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" 
+                                    value="{{ $usaha->nama }}" required>
                             </div>
 
                             <div class="md:col-span-2">
                                 <label class="block text-sm font-semibold text-gray-700 mb-2">Deskripsi</label>
                                 <textarea name="deskripsi" rows="3" 
-                                          class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" 
-                                          required>{{ $usaha->deskripsi }}</textarea>
+                                        class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" 
+                                        required>{{ $usaha->deskripsi }}</textarea>
                             </div>
 
                             <div class="md:col-span-2">
                                 <label class="block text-sm font-semibold text-gray-700 mb-2">Penjelasan Detail</label>
                                 <textarea name="penjelasan" rows="4" 
-                                          class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200">{{ $usaha->penjelasan }}</textarea>
+                                    class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200">{{ $usaha->penjelasan }}</textarea>
                             </div>
 
                             <div>
                                 <label class="block text-sm font-semibold text-gray-700 mb-2">Nama Pemilik</label>
                                 <input type="text" name="kontak" 
-                                       class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" 
-                                       value="{{ $usaha->kontak }}" required>
+                                    class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" 
+                                    value="{{ $usaha->kontak }}" required>
                             </div>
 
                             <div>
                                 <label class="block text-sm font-semibold text-gray-700 mb-2">Nomor HP</label>
                                 <input type="text" name="nomor_hp" 
-                                       class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" 
-                                       value="{{ $usaha->nomor_hp }}">
+                                    class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" 
+                                    value="{{ $usaha->nomor_hp }}">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label for="" class="block text-sm font-semibold text-gray-700 mb-2">Status</label>
+                                <select class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                                    id="status" name="status">
+                                    <option value="Draft">Draft</option>
+                                    <option value="Posting">Posting</option>
+                                    <option value="Arsip">Arsip</option>
+                                </select>
                             </div>
 
                             <div class="md:col-span-2">

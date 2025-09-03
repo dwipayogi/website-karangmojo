@@ -9,6 +9,7 @@ class Usaha extends Model
     //
     protected $table = 'usaha';
     public $timestamps = false;
+    
     protected $fillable = [
         'user_id',
         'slug',

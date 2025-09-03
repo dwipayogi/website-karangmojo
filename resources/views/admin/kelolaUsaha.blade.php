@@ -18,7 +18,7 @@
             <!-- Success/Error Messages -->
             @if(session('success'))
                 <div x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 5000)" 
-                     class="mb-6 p-4 bg-green-500 text-white rounded-2xl shadow-lg flex items-center justify-between">
+                    class="mb-6 p-4 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-2xl shadow-lg flex items-center justify-between">
                     <div class="flex items-center space-x-3">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>

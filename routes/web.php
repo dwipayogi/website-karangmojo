@@ -24,6 +24,11 @@ Route::middleware(['auth', 'checkRole:Superadmin,Admin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     
     Route::get('/kelolaBerita', [BeritaController::class, 'index'])->name('kelolaBerita');
+    Route::get('/kelolaBerita/tambahBerita', [BeritaController::class, 'tambah'])->name('tambahBerita');
+    Route::post('/kelolaBerita/tambahBerita', [BeritaController::class, 'store'])->name('simpanBerita');
+    Route::get('/kelolaBerita/{id}', [BeritaController::class, 'show'])->name('lihatBerita');
+    Route::get('/kelolaBerita/editBerita/{id}', [BeritaController::class, 'edit'])->name('editBerita');
+    Route::put('/kelolaBerita/editBerita/{id}', [BeritaController::class, 'update'])->name('updateBerita');
     Route::delete('/kelolaBerita/{id}', [BeritaController::class, 'destroy'])->name('hapusBerita');
 
     Route::get('/kelolaGaleri', [GaleriController::class, 'index'])->name('kelolaGaleri');
